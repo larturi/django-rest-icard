@@ -3,25 +3,26 @@ import os
 from pathlib import Path
 
 env = environ.Env(
-    DEBUG=(bool, True)
+    DEBUG=(bool, True),
+    DJANGO_SECRET_KEY=(str, ''),
+    DJANGO_ALLOWED_HOSTS=(list, ['*']),
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Take environment variables from .env file
-environ.Env.read_env(os.path.join(BASE_DIR, '..' '.env'))
+environ.Env.read_env(os.path.join(BASE_DIR, '..', '.env'))
 
 # False if not in os.environ because of casting above
 DEBUG = env('DEBUG')
 
 # Raises Django's ImproperlyConfigured
-SECRET_KEY = 'django-insecure-94jw4reou!i=q36tt(ok_6#hn0+ps86i#5m!y#ctncfv0sv_=q'
-# SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS')
 
 # Application definition
 
