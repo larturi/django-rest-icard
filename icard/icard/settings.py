@@ -27,7 +27,7 @@ class Base(Configuration):
 
     # Application definition
 
-    INSTALLED_APPS = [
+    DJANGO_APPS = [
         'django.contrib.admin',
         'django.contrib.auth',
         'django.contrib.contenttypes',
@@ -35,6 +35,12 @@ class Base(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
     ]
+
+    INTERNAL_APPS = []
+
+    EXTERNAL_APPS = []
+
+    INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
 
     MIDDLEWARE = [
         'django.middleware.security.SecurityMiddleware',
