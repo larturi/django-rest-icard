@@ -36,9 +36,12 @@ class Base(Configuration):
         'django.contrib.staticfiles',
     ]
 
-    INTERNAL_APPS = []
+    EXTERNAL_APPS = [
+        'rest_framework',
+        'drf_yasg',
+    ]
 
-    EXTERNAL_APPS = []
+    INTERNAL_APPS = []
 
     INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
 
