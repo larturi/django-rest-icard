@@ -41,7 +41,9 @@ class Base(Configuration):
         'drf_yasg',
     ]
 
-    INTERNAL_APPS = []
+    INTERNAL_APPS = [
+        'users',
+    ]
 
     INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
 
@@ -129,6 +131,8 @@ class Base(Configuration):
     # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
     DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+    AUTH_USER_MODEL = 'users.User'
 
 class Dev(Base):
     DEBUG = True

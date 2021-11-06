@@ -8,6 +8,8 @@ django = "*"
 djangorestframework = "*"
 django-environ = "*"
 django-configurations = "*"
+install = "*"
+drf-yasg = "*"
 
 [dev-packages]
 
