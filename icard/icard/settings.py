@@ -1,4 +1,5 @@
 import os
+import datetime
 from pathlib import Path
 
 import environ
@@ -144,6 +145,10 @@ class Base(Configuration):
 
     CORS_ORIGIN_ALLOW_ALL = True
     CORS_ALLOW_CREDENTIALS = True
+
+    SIMPLE_JWT = {
+        'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=120)
+    }
 
 class Dev(Base):
     DEBUG = True
