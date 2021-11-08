@@ -10,6 +10,9 @@ django-environ = "*"
 django-configurations = "*"
 install = "*"
 drf-yasg = "*"
+pip = "*"
+djangorestframework-simplejwt = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
