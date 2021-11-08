@@ -39,6 +39,7 @@ class Base(Configuration):
     EXTERNAL_APPS = [
         'rest_framework',
         'drf_yasg',
+        'corsheaders',
     ]
 
     INTERNAL_APPS = [
@@ -50,6 +51,7 @@ class Base(Configuration):
     MIDDLEWARE = [
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
+        "corsheaders.middleware.CorsMiddleware",
         'django.middleware.common.CommonMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -139,6 +141,9 @@ class Base(Configuration):
             'rest_framework_simplejwt.authentication.JWTAuthentication',
         )
     }
+
+    CORS_ORIGIN_ALLOW_ALL = True
+    CORS_ALLOW_CREDENTIALS = True
 
 class Dev(Base):
     DEBUG = True
