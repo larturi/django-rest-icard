@@ -45,6 +45,7 @@ class Base(Configuration):
 
     INTERNAL_APPS = [
         'users',
+        'categories',
     ]
 
     INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
@@ -129,6 +130,8 @@ class Base(Configuration):
     # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
     STATIC_URL = '/static/'
+    MEDIA_URL = '/uploads/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
     # Default primary key field type
     # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
