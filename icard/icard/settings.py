@@ -41,6 +41,7 @@ class Base(Configuration):
         'rest_framework',
         'drf_yasg',
         'corsheaders',
+        'django_filters',
     ]
 
     INTERNAL_APPS = [
