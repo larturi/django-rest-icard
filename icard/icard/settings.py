@@ -45,7 +45,8 @@ class Base(Configuration):
 
     INTERNAL_APPS = [
         'users',
-        'categories',
+        'category',
+        'product',
     ]
 
     INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS
@@ -133,15 +134,12 @@ class Base(Configuration):
     MEDIA_URL = '/uploads/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
-
-    
-
     # Default primary key field type
     # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
     DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-    AUTH_USER_MODEL = 'users.User'
+    AUTH_USER_MODEL = 'users.user'
 
     REST_FRAMEWORK = {
         'DEFAULT_AUTHENTICATION_CLASSES': (

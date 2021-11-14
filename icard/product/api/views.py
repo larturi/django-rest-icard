@@ -3,12 +3,10 @@ from rest_framework.decorators import permission_classes
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-from categories.models import Category
-from .serializers import CategorySerializer
+from product.models import Product
+from product.api.serializers import ProductSerializer
 
-
-class CategoryApiViewSet(ModelViewSet):
+class ProductApiViewSet(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
-    serializer_class = CategorySerializer
-    queryset = Category.objects.all()
-    
+    serializer_class = ProductSerializer
+    queryset = Product.objects.all()
