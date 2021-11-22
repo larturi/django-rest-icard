@@ -49,6 +49,7 @@ class Base(Configuration):
         'category',
         'product',
         'table',
+        'order',
     ]
 
     INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + INTERNAL_APPS

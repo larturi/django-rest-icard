@@ -11,6 +11,7 @@ from users.api.router import router_user
 from category.api.router import router_category
 from product.api.router import router_product
 from table.api.router import router_table
+from order.api.router import router_order
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -34,6 +35,7 @@ urlpatterns = [
     path('api/', include(router_category.urls)),
     path('api/', include(router_product.urls)),
     path('api/', include(router_table.urls)),
+    path('api/', include(router_order.urls)),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
