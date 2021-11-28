@@ -18,5 +18,5 @@ class Payment(models.Model):
     status_payment = models.CharField(max_length=50, choices=PAYMENT_STATUS_ENUM)
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str_(self):
-        return self.table.name
+    def __str__(self):
+        return str(self.table)
