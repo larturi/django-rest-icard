@@ -10,5 +10,5 @@ class TableApiViewSet(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
     serializer_class = TableSerializer
     queryset = Table.objects.all().order_by('number')
-    filter_backend = [DjangoFilterBackend]
-    filterset_fields = ['number']
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['number',]
